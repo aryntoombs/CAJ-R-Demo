@@ -18,6 +18,7 @@ Townhouses_by_year <- Townhouses %>%
   summarise(count = n())
 
 Townhouses_by_community <- Townhouses %>%
+  #filter(AppliedDate >= as.Date("2025-01-01")) %>%
   group_by(CommunityCode, CommunityName) %>%
   summarise(count = n()) %>%
   arrange(desc(count))
